@@ -1,0 +1,600 @@
+fileFormatVersion: 2
+guid: 91c55253c571ba548a062274550f9009
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BetonForPodsobka
+    second: {fileID: 2100000, guid: dfa692ded620aff42be22a61ff9c062a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.001
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.002
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.003
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.004
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.005
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.006
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.007
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.008
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.009
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.010
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.011
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.012
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.013
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.014
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.015
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.016
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.017
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.018
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bl-PLAST-6.019
+    second: {fileID: 2100000, guid: 46ce39742e9bf19439a80d3afe3ff37b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 62c5c41153cb31e4fbb0503b9cb05133, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.001
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.002
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.003
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.004
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.005
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.006
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.007
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.008
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.009
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.011
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.012
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.014
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.016
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.017
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.018
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.019
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.023
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.027
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.028
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.029
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.030
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.031
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.032
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.033
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.034
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.035
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.036
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.037
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.038
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.039
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.040
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.041
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.042
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.043
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PlasticPlintus.044
+    second: {fileID: 2100000, guid: 8ae0e46e16364c242853991ba5cab6ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ulica
+    second: {fileID: 2100000, guid: 89eec0c7e345f7d4f84aecf861a2f70e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Up1
+    second: {fileID: 2100000, guid: e97d84b04789e934cb68e5ff924a08f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Up2
+    second: {fileID: 2100000, guid: 69a16546d44842f4ba5fd7cbf0bc92f7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Up3
+    second: {fileID: 2100000, guid: 4b3781fc9f87e6d4aa52e6bc59b4f3a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wallpaper1
+    second: {fileID: 2100000, guid: ffa076476ad37614bb4e3969b543c1e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wallpaper2
+    second: {fileID: 2100000, guid: 3c81ff3d1d2d6dd40a4316e8a693f98a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wallpaper3
+    second: {fileID: 2100000, guid: 97c441360d2f3e24ea80c9f0595170ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.001
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.002
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.003
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.004
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.005
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.006
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.007
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.008
+    second: {fileID: 2100000, guid: 56327e1784e637d408ee2925621bc237, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.009
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.010
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.011
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.012
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.014
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.016
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.017
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.018
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.019
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.020
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.021
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.022
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.023
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.024
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodPlintus.025
+    second: {fileID: 2100000, guid: 954fb4af0da79a64e8d963c14c301745, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoofForKitchen
+    second: {fileID: 2100000, guid: d438ce952ba95744f9e59d2d2f83fa2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: balconyMetall
+    second: {fileID: 2100000, guid: cafecf0df2e2e46499ad1e5bf91b6eb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: betonForrBalcony
+    second: {fileID: 2100000, guid: eedaef8aea07d614d9e209fc01676a0e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 71e31f0256cb9ac4ea7d60665456c089, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: main
+    second: {fileID: 2100000, guid: dc5d555df984c654389e244f363bacba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mainRadiator
+    second: {fileID: 2100000, guid: db23f0a490edb914888653f517d1ec5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mainRadiator.001
+    second: {fileID: 2100000, guid: af698fdd7733072409ba3b5fef29a3ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mainRadiator2
+    second: {fileID: 2100000, guid: 71200892bfcab994fa1aaf5e00cc136b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mainRadiator2.001
+    second: {fileID: 2100000, guid: 71200892bfcab994fa1aaf5e00cc136b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: parquet
+    second: {fileID: 2100000, guid: 47d21cc846367a54fa632d72a03df11d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plitikaForBathWall
+    second: {fileID: 2100000, guid: ee472db185ccaa448a3d8bc86a661749, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tile
+    second: {fileID: 2100000, guid: 90dcdef1b8bc8d74799fd0aba4b1862f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 15
+    secondaryUVAreaDistortion: 10
+    secondaryUVHardAngle: 90
+    secondaryUVPackMargin: 5
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
