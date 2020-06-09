@@ -6,7 +6,8 @@ public class Interaction : MonoBehaviour
 {
     public Rigidbody PickUpObjectRigidbody;
     public float PickUpLerpSpeed, MouseScroll;
-    [SerializeField] private GameObject DedicatedDoor, PickUpObject;
+    [SerializeField] private GameObject DedicatedDoor, Pers;
+    public GameObject PickUpObject;
     private Animator DedicatedDoorAnimator;
 
     [SerializeField] private Camera MainCamera;
@@ -14,10 +15,12 @@ public class Interaction : MonoBehaviour
     private RaycastHit InteractRayHit;
 
     public KeyCode InteractionKey = KeyCode.E;
+    public KeyCode AdvanceInteractionKey = KeyCode.F;
 
     [SerializeField] private bool DoorState = false; // Что делать с дверью открыть или закрыть
-    public bool PickUpState = false; // Что делать с предметом
+    public bool PickUpState = false, AdvAction = false; // Что делать с предметом
 
+    [SerializeField] private float RotateSpeed;
 
     private void Start()
     {
@@ -58,20 +61,41 @@ public class Interaction : MonoBehaviour
                     DoorInteractions();
                 }
 
-                if (InteractRayHit.collider.tag == "Flask" && InteractRayHit.distance <= 5f)
+                if (InteractRayHit.collider.tag == "CanMove" && InteractRayHit.distance <= 4f)
                 {
-                    PickUpFlaskInteraction();
-
+                    ObjectInteracrion();
                 }
+
             }
         }
+        Debug.DrawLine(StartRay, FinishRay, Color.green);
+    }
 
+    private void FixedUpdate()
+    {
         if (PickUpState == true)
         {
-            PickUpObjectRigidbody.useGravity = false;
-            PickUpObjectRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-            //PickUpObjectRigidbody.isKinematic = true;
-            PickUpObject.transform.position = Vector3.Lerp(PickUpObject.transform.position, MainCamera.ScreenToWorldPoint(Input.mousePosition) + MainCamera.transform.TransformDirection(Vector3.forward) * MouseScroll, PickUpLerpSpeed);
+            if (Input.GetMouseButton(1))
+            {
+                Pers.GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>().enabled = false;
+                PickUpObjectRigidbody.useGravity = false;
+
+                float rotX = Input.GetAxis("Mouse X") * RotateSpeed * Mathf.Deg2Rad;
+                float rotY = Input.GetAxis("Mouse Y") * RotateSpeed * Mathf.Deg2Rad;
+
+                PickUpObject.transform.RotateAround(Vector3.up, -rotX);
+                PickUpObject.transform.RotateAround(Vector3.right, rotY);
+            }
+            else
+            {
+                Pers.GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>().enabled = true;
+
+                PickUpObjectRigidbody.useGravity = false;
+                PickUpObjectRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+                //PickUpObjectRigidbody.isKinematic = true;
+                PickUpObject.transform.position = Vector3.Lerp(PickUpObject.transform.position, MainCamera.ScreenToWorldPoint(Input.mousePosition) + MainCamera.transform.TransformDirection(Vector3.forward) * MouseScroll, PickUpLerpSpeed);
+
+            }
         }
         else
         {
@@ -80,9 +104,7 @@ public class Interaction : MonoBehaviour
             //PickUpObjectRigidbody.isKinematic = false;
         }
 
-        Debug.DrawLine(StartRay, FinishRay, Color.green);
     }
-
 
 
     public void DoorInteractions()
@@ -117,19 +139,54 @@ public class Interaction : MonoBehaviour
 
     }
 
-    public void PickUpFlaskInteraction()
+    public void DoorShkaf()
     {
-        Debug.Log("InteractWithFlask");
+        Debug.Log("InteractWithDoorShkaf");
 
         if (Input.GetKeyDown(InteractionKey))
         {
 
-            PickUpObject = InteractRayHit.collider.gameObject;
-            PickUpObjectRigidbody = PickUpObject.GetComponent<Rigidbody>();
-            PickUpState = !PickUpState;
+            if (DedicatedDoor == null || DedicatedDoor.name != InteractRayHit.collider.gameObject.name)
+            {
+
+                Debug.LogWarning("ChangeDoorShkaf");
+                DedicatedDoor = InteractRayHit.collider.gameObject;
+
+                DedicatedDoorAnimator = DedicatedDoor.transform.GetComponent<Animator>();
+
+                DoorState = !DedicatedDoorAnimator.GetBool("DoorInteraction");
+
+                DedicatedDoorAnimator.SetBool("DoorInteraction", DoorState);
+
+                Debug.Log(DoorState);
+
+            }
+            else
+            {
+                DoorState = !DoorState;
+                DedicatedDoorAnimator.SetBool("DoorInteraction", DoorState);
+            }
 
         }
-
     }
 
+    public void ObjectInteracrion()
+    {
+
+        if (Input.GetKeyDown(InteractionKey))
+        {
+            PickUpObject = InteractRayHit.collider.gameObject;
+            PickUpObjectRigidbody = InteractRayHit.collider.gameObject.GetComponent<Rigidbody>();
+            PickUpState = !PickUpState;
+        }
+        if (Input.GetKeyDown(AdvanceInteractionKey))
+        {
+            PickUpObject = InteractRayHit.collider.gameObject;
+            if(PickUpObject.GetComponent<AdvanceInteractionKrishka>())
+            {
+                AdvAction = !AdvAction;
+                PickUpObject.GetComponent<AdvanceInteractionKrishka>().AdvInteract();
+            }
+        }
+    }
 }

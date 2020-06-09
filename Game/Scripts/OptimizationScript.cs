@@ -12,6 +12,7 @@ public class OptimizationScript : MonoBehaviour
             HideAndShowObjects[0].SetActive(false);
             HideAndShowObjects[1].SetActive(false);
             HideAndShowObjects[2].SetActive(false);
+            HideAndShowObjects[3].SetActive(false);
         }
     }
     private void OnTriggerExit(Collider other)
@@ -22,6 +23,7 @@ public class OptimizationScript : MonoBehaviour
             HideAndShowObjects[0].SetActive(true);
             HideAndShowObjects[1].SetActive(true);
             HideAndShowObjects[2].SetActive(true);
+            HideAndShowObjects[3].SetActive(true);
         }
     }
 }
