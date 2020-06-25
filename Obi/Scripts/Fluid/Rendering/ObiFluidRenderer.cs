@@ -96,7 +96,6 @@ namespace Obi
 	
 			if (particleRenderers == null || fluidMaterial == null)
 				return;
-			
 			int refraction = Shader.PropertyToID("_Refraction");
 			int foam = Shader.PropertyToID("_Foam");
 			int depth = Shader.PropertyToID("_FluidDepthTexture");

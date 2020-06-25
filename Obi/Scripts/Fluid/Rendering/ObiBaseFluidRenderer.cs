@@ -9,7 +9,7 @@ namespace Obi
 	[RequireComponent (typeof(Camera))]
 	public abstract class ObiBaseFluidRenderer : MonoBehaviour{
 
-		public ObiParticleRenderer[] particleRenderers;
+		public List<ObiParticleRenderer> particleRenderers;
 		public bool autoupdate = true;
 		protected CommandBuffer renderFluid;
 		protected Camera currentCam;
@@ -58,7 +58,7 @@ namespace Obi
 		private void OnPreRender(){
 
 			bool act = gameObject.activeInHierarchy && enabled;
-			if (!act || particleRenderers == null || particleRenderers.Length == 0)
+			if (!act || particleRenderers == null || particleRenderers.Count == 0)
 			{
 				DestroyCommandBuffer();
 				Cleanup();

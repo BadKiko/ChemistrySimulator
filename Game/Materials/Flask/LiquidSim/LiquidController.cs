@@ -35,12 +35,12 @@ public class LiquidController : MonoBehaviour
         {
             LiquidAmmount = LiquidRenderer.sharedMaterial.GetFloat("_FillAmount");
 
-            LiquidAmmount += 0.001f;
 
-            LiquidRenderer.sharedMaterial.SetFloat("_FillAmount", LiquidAmmount);
-
-            if (LiquidAmmount <= 0.7f)
+            if (LiquidAmmount <= 0.8f)
             {
+                LiquidAmmount += 0.001f;
+                LiquidRenderer.sharedMaterial.SetFloat("_FillAmount", LiquidAmmount);
+
                 mainObiEmiter.GetComponent<Obi.ObiEmitter>().speed = 1.5f;
                 mainObiSolver.GetComponent<Obi.ObiSolver>().enabled = true;
             }

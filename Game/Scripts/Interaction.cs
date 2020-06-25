@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
+    [SerializeField] private ElementsColor ELMColor; 
+
     public Rigidbody PickUpObjectRigidbody;
     public float PickUpLerpSpeed, MouseScroll;
-    [SerializeField] private GameObject DedicatedDoor, Pers;
+    [SerializeField] private GameObject DedicatedDoor, Pers, CameraController;
     public GameObject PickUpObject;
     private Animator DedicatedDoorAnimator;
 
     [SerializeField] private Camera MainCamera;
+    [SerializeField] Vector3 LerpPickObject;
     private Vector3 StartRay, FinishRay;
     private RaycastHit InteractRayHit;
 
@@ -19,13 +22,14 @@ public class Interaction : MonoBehaviour
 
     [SerializeField] private bool DoorState = false; // Что делать с дверью открыть или закрыть
     public bool PickUpState = false, AdvAction = false; // Что делать с предметом
+    private bool _pickUpMode = true;
 
     [SerializeField] private float RotateSpeed;
 
     private void Start()
     {
-
-    
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     private void Update()
     {
@@ -66,6 +70,10 @@ public class Interaction : MonoBehaviour
                     ObjectInteracrion();
                 }
 
+                if (InteractRayHit.collider.tag == "Kran" && InteractRayHit.distance <= 5f)
+                {
+                    KranInteraction();
+                }
             }
         }
         Debug.DrawLine(StartRay, FinishRay, Color.green);
@@ -77,7 +85,10 @@ public class Interaction : MonoBehaviour
         {
             if (Input.GetMouseButton(1))
             {
-                Pers.GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>().enabled = false;
+                Pers.GetComponent<CMF.Mover>().enabled = false;
+                Pers.GetComponent<CMF.AdvancedWalkerController>().enabled = false;
+                CameraController.GetComponent<CMF.CameraController>().enabled = false;
+
                 PickUpObjectRigidbody.useGravity = false;
 
                 float rotX = Input.GetAxis("Mouse X") * RotateSpeed * Mathf.Deg2Rad;
@@ -88,13 +99,23 @@ public class Interaction : MonoBehaviour
             }
             else
             {
-                Pers.GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>().enabled = true;
+                Pers.GetComponent<CMF.Mover>().enabled = true;
+                Pers.GetComponent<CMF.AdvancedWalkerController>().enabled = true;
+                CameraController.GetComponent<CMF.CameraController>().enabled = true;
 
                 PickUpObjectRigidbody.useGravity = false;
                 PickUpObjectRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-                //PickUpObjectRigidbody.isKinematic = true;
-                PickUpObject.transform.position = Vector3.Lerp(PickUpObject.transform.position, MainCamera.ScreenToWorldPoint(Input.mousePosition) + MainCamera.transform.TransformDirection(Vector3.forward) * MouseScroll, PickUpLerpSpeed);
+                PickUpObject.transform.position = Vector3.Lerp(PickUpObject.transform.position, LerpPickObject, PickUpLerpSpeed);
 
+            }
+
+            if (_pickUpMode)
+            {
+                LerpPickObject = MainCamera.ScreenToWorldPoint(Input.mousePosition) + MainCamera.transform.TransformDirection(Vector3.forward) * MouseScroll;
+            }
+            else
+            {
+                LerpPickObject = MainCamera.ScreenToWorldPoint(Input.mousePosition) + (MainCamera.transform.TransformDirection(Vector3.forward) / 1.5f + MainCamera.transform.TransformDirection(Vector3.right) / 2f + MainCamera.transform.TransformDirection(Vector3.down) / 3) * 1.5f;
             }
         }
         else
@@ -104,6 +125,10 @@ public class Interaction : MonoBehaviour
             //PickUpObjectRigidbody.isKinematic = false;
         }
 
+        if (Input.GetMouseButtonDown(2))
+        {
+            _pickUpMode = !_pickUpMode;
+        }
     }
 
 
@@ -187,6 +212,18 @@ public class Interaction : MonoBehaviour
                 AdvAction = !AdvAction;
                 PickUpObject.GetComponent<AdvanceInteractionKrishka>().AdvInteract();
             }
+        }
+    }
+
+    public void KranInteraction()
+    {
+
+        Debug.Log("Kran Interacted");
+
+        if (Input.GetKeyDown(InteractionKey))
+        {
+            PickUpObject.transform.GetChild(1).GetComponent<Renderer>().sharedMaterial.SetFloat("_FillAmount", 0.4f);
+            PickUpObject.transform.GetChild(1).GetComponent<Renderer>().sharedMaterial.SetColor("_Tint", ELMColor.Water);
         }
     }
 }
