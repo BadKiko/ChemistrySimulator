@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
@@ -6,6 +7,14 @@ public class Pause : MonoBehaviour
     [SerializeField] private GameObject VFX_Smoke; 
     [SerializeField] private GameObject Pers, CameraController;
     [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private Button Exit, InMenu;
+
+
+    private void Start()
+    {
+        Exit.onClick.AddListener(ExitGame);
+        InMenu.onClick.AddListener(ExitInMenu);
+    }
 
     void Update()
     {
@@ -42,7 +51,15 @@ public class Pause : MonoBehaviour
                 PauseMenu.SetActive(false);
                 PauseMenu.GetComponent<Animator>().SetBool("Show", false);
             }
-
         }
+    }
+
+    void ExitInMenu()
+    {
+        Application.LoadLevel(2);
+    }
+    void ExitGame()
+    {
+        Application.Quit();
     }
 }
