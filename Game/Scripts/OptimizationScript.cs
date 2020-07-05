@@ -1,29 +1,19 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class OptimizationScript : MonoBehaviour
 {
-    [SerializeField] private GameObject[] HideAndShowObjects;
-
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
-        if(other.tag == "Player")
-        {
-            Debug.Log("Hide Objects");
-            HideAndShowObjects[0].SetActive(false);
-            HideAndShowObjects[1].SetActive(false);
-            HideAndShowObjects[2].SetActive(false);
-            HideAndShowObjects[3].SetActive(false);
-        }
+        
     }
-    private void OnTriggerExit(Collider other)
+    private void OnBecameVisible()
     {
-        if (other.tag == "Player")
-        {
-            Debug.Log("Show Objects");
-            HideAndShowObjects[0].SetActive(true);
-            HideAndShowObjects[1].SetActive(true);
-            HideAndShowObjects[2].SetActive(true);
-            HideAndShowObjects[3].SetActive(true);
-        }
+        this.gameObject.SetActive(true);
+    }
+    private void OnBecameInvisible()
+    {
+        this.gameObject.SetActive(false);
     }
 }
