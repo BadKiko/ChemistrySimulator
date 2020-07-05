@@ -29,7 +29,6 @@ public class LiquidController : MonoBehaviour
             
         }
 
-        Debug.Log(nowObjectRotate);
 
         if (nowObjectRotate <= RotateMin)
         {

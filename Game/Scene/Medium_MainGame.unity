@@ -22709,11 +22709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b87c975d578cf5848a2c7bb09ea06fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HideAndShowObjects:
-  - {fileID: 635278774}
-  - {fileID: 455091499}
-  - {fileID: 932523990}
-  - {fileID: 656944283}
 --- !u!1 &789980632
 GameObject:
   m_ObjectHideFlags: 0
