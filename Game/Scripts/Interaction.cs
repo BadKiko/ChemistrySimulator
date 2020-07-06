@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
+
+
+
     [SerializeField] private ElementsColor ELMColor; 
 
     public Rigidbody PickUpObjectRigidbody;
@@ -26,11 +29,17 @@ public class Interaction : MonoBehaviour
 
     [SerializeField] private float RotateSpeed;
 
+
+
+
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+
     private void Update()
     {
         StartRay = MainCamera.ScreenToWorldPoint(new Vector3(Screen.height / 2, Screen.width / 2, 0));
@@ -60,17 +69,17 @@ public class Interaction : MonoBehaviour
             {
 
 
-                if (InteractRayHit.collider.tag == "Door" && InteractRayHit.distance <= 2f)
+                if (InteractRayHit.collider.tag == "Door" && InteractRayHit.distance <= 2f) // Тэг дверей
                 {
                     DoorInteractions();
                 }
 
-                if (InteractRayHit.collider.tag == "CanMove" && InteractRayHit.distance <= 4f)
+                if (InteractRayHit.collider.tag == "CanMove" && InteractRayHit.distance <= 4f) // Тэг колб и то что можно перетащить
                 {
                     ObjectInteracrion();
                 }
 
-                if (InteractRayHit.collider.tag == "Kran" && InteractRayHit.distance <= 5f)
+                if (InteractRayHit.collider.tag == "Kran" && InteractRayHit.distance <= 5f) // Тэг крана от куда берется вода
                 {
                     KranInteraction();
                 }
@@ -83,7 +92,7 @@ public class Interaction : MonoBehaviour
     {
         if (PickUpState == true)
         {
-            if (Input.GetMouseButton(1))
+            if (Input.GetMouseButton(1)) // Вращение предмета в руке
             {
                 Pers.GetComponent<CMF.Mover>().enabled = false;
                 Pers.GetComponent<CMF.AdvancedWalkerController>().enabled = false;
