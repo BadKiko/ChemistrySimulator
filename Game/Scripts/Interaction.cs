@@ -31,6 +31,7 @@ public class Interaction : MonoBehaviour
 
     [SerializeField] private float RotateSpeed;
 
+    [SerializeField] private FluidRecognition _frScript;
 
 
 
@@ -222,6 +223,7 @@ public class Interaction : MonoBehaviour
             PickUpObjectRigidbody = InteractRayHit.collider.gameObject.GetComponent<Rigidbody>();
             PickUpObiEmitter = PickUpObject.transform.GetChild(2).GetComponent<Obi.ObiEmitter>();
             PickUpObiSolver = PickUpObject.transform.parent.GetComponent<Obi.ObiSolver>();
+            _frScript.OnEnable();
             PickUpState = !PickUpState;
         }
         if (Input.GetKeyDown(AdvanceInteractionKey))

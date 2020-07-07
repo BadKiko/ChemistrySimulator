@@ -10,21 +10,19 @@ public class FluidRecognition : MonoBehaviour
     [SerializeField] ObiCollider mainCollider;
     [SerializeField] Interaction _interactionScript;
     [SerializeField] LiquidController _liquidControllerScript;
+    [SerializeField] float _liquidPlusAmmount;
 
-
-    //private void Update()
-    //{
-    //    solver = _interactionScript.PickUpObiSolver;
-    //    emitter = _interactionScript.PickUpObiEmitter;
-    //}
-
-    void OnEnable()
+    public void OnEnable()
 	{
+        solver = _interactionScript.PickUpObiSolver;
+        emitter = _interactionScript.PickUpObiEmitter;
         solver.OnCollision += Solver_OnCollision;
 	}
 
-	void OnDisable()
+    public void OnDisable()
 	{
+        solver = _interactionScript.PickUpObiSolver;
+        emitter = _interactionScript.PickUpObiEmitter;
         solver.OnCollision -= Solver_OnCollision;
 	}
 
@@ -42,7 +40,8 @@ public class FluidRecognition : MonoBehaviour
                 if (ObiCollider.idToCollider[contact.other].tag == "CanAddLiquid")
                 {
                     emitter.life[solver.particleToActor[contact.particle].indexInActor] = 0;
-                    _liquidControllerScript.AddFluid();
+                    _liquidControllerScript = ObiCollider.idToCollider[contact.other].gameObject.transform.parent.GetComponent<LiquidController>();
+                    _liquidControllerScript.AddFluid(_liquidPlusAmmount);
                 }
             }
 		}

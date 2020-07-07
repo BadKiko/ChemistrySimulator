@@ -22,7 +22,7 @@ public class DebugConsole : MonoBehaviour
             _liqRender = _instantieObject.transform.GetChild(0).GetChild(1).GetComponent<Renderer>();
             _liqRender.material = new Material(LiquidShader);
             _liqRender.sharedMaterial.SetColor("_Tint", LiquidColor);
-            _liqRender.sharedMaterial.SetFloat("_FillAmount", 1f);
+            _liqRender.sharedMaterial.SetFloat("_FillAmount", 0.68f);
             _instantieObject.transform.GetChild(0).GetChild(1).GetComponent<Renderer>().material = _liqRender.material;
             _instantieObject.transform.GetChild(0).GetChild(1).GetComponent<Renderer>().sharedMaterial = _liqRender.sharedMaterial;
 

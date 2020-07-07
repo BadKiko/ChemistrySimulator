@@ -11,10 +11,12 @@ public class LiquidController : MonoBehaviour
     private Renderer LiquidRenderer;
     [SerializeField] private float LiquidAmmount;
     [SerializeField] private bool bug90angle;
+    [SerializeField] Interaction _interactionScript;
 
     private void Start()
     {
         LiquidRenderer = transform.GetChild(1).GetComponent<Renderer>();
+        LiquidAmmount = LiquidRenderer.sharedMaterial.GetFloat("_FillAmount");
 
     }
 
@@ -33,9 +35,9 @@ public class LiquidController : MonoBehaviour
         if (nowObjectRotate <= RotateMin)
         {
             LiquidAmmount = LiquidRenderer.sharedMaterial.GetFloat("_FillAmount");
+            _interactionScript.PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
 
-
-            if (LiquidAmmount <= 0.8f)
+            if (LiquidAmmount <= 0.68f)
             {
                 LiquidAmmount += 0.001f;
                 LiquidRenderer.sharedMaterial.SetFloat("_FillAmount", LiquidAmmount);
@@ -51,12 +53,13 @@ public class LiquidController : MonoBehaviour
         else
         {
             mainObiEmiter.GetComponent<Obi.ObiEmitter>().speed = 0;
+            _interactionScript.PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
         }
     }
 
-    public void AddFluid()
+    public void AddFluid(float _liquidPlusAmmount)
     {
-        LiquidAmmount -= 0.00000001f;
+        LiquidAmmount -= _liquidPlusAmmount;
         LiquidRenderer.sharedMaterial.SetFloat("_FillAmount", LiquidAmmount);
     }
 }
