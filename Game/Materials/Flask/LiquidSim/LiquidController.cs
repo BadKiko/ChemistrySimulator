@@ -56,7 +56,7 @@ public class LiquidController : MonoBehaviour
 
     public void AddFluid()
     {
-        LiquidAmmount -= 0.001f;
+        LiquidAmmount -= 0.00000001f;
         LiquidRenderer.sharedMaterial.SetFloat("_FillAmount", LiquidAmmount);
     }
 }

@@ -12,11 +12,11 @@ public class FluidRecognition : MonoBehaviour
     [SerializeField] LiquidController _liquidControllerScript;
 
 
-    private void Update()
-    {
-        solver = _interactionScript.PickUpObiSolver;
-        emitter = _interactionScript.PickUpObiEmitter;
-    }
+    //private void Update()
+    //{
+    //    solver = _interactionScript.PickUpObiSolver;
+    //    emitter = _interactionScript.PickUpObiEmitter;
+    //}
 
     void OnEnable()
 	{

@@ -94,8 +94,9 @@ public class Interaction : MonoBehaviour
     {
         if (PickUpState == true)
         {
+            PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false; // Включает коллайдер куда попадает жидкость чтобы пополнить колбу
 
-            
+
 
             if (Input.GetMouseButton(1)) // Вращение предмета в руке
             {
@@ -136,6 +137,7 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
             PickUpObjectRigidbody.constraints = RigidbodyConstraints.None;
             PickUpObjectRigidbody.useGravity = true;
             //PickUpObjectRigidbody.isKinematic = false;
