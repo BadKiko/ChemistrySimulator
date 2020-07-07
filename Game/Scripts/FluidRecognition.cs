@@ -6,33 +6,45 @@ using Obi;
 public class FluidRecognition : MonoBehaviour
 {
 	[SerializeField] ObiSolver solver;
+	[SerializeField] ObiEmitter emitter;
+    [SerializeField] ObiCollider mainCollider;
+    [SerializeField] Interaction _interactionScript;
+    [SerializeField] LiquidController _liquidControllerScript;
 
-	Obi.ObiSolver.ObiCollisionEventArgs collisionEvent;
 
-	void OnEnable()
+    private void Update()
+    {
+        solver = _interactionScript.PickUpObiSolver;
+        emitter = _interactionScript.PickUpObiEmitter;
+    }
+
+    void OnEnable()
 	{
-		solver.OnCollision += Solver_OnCollision;
+        solver.OnCollision += Solver_OnCollision;
 	}
 
 	void OnDisable()
 	{
-		solver.OnCollision -= Solver_OnCollision;
+        solver.OnCollision -= Solver_OnCollision;
 	}
 
-	void Solver_OnCollision(object sender, Obi.ObiSolver.ObiCollisionEventArgs e)
+	void Solver_OnCollision(object sender, Obi.ObiSolver.ObiCollisionEventArgs collisionEventArgs)
 	{
-		foreach (Oni.Contact contact in e.contacts)
-		{
-			Debug.Log("WTF");
-
+		foreach (Oni.Contact contact in collisionEventArgs.contacts)
+		{   
+            
+            
 			if (contact.distance < 0.01)
 			{
-				Component collider;
-				if (ObiCollider.idToCollider.TryGetValue(contact.other, out collider))
-				{
-					Debug.Log("WTF2");
-				}
-			}
+
+
+                Component collider = mainCollider;
+                if (ObiCollider.idToCollider[contact.other].tag == "CanAddLiquid")
+                {
+                    emitter.life[solver.particleToActor[contact.particle].indexInActor] = 0;
+                    _liquidControllerScript.AddFluid();
+                }
+            }
 		}
 	}
 }

@@ -53,4 +53,10 @@ public class LiquidController : MonoBehaviour
             mainObiEmiter.GetComponent<Obi.ObiEmitter>().speed = 0;
         }
     }
+
+    public void AddFluid()
+    {
+        LiquidAmmount -= 0.001f;
+        LiquidRenderer.sharedMaterial.SetFloat("_FillAmount", LiquidAmmount);
+    }
 }

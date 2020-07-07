@@ -13,6 +13,8 @@ public class Interaction : MonoBehaviour
     public float PickUpLerpSpeed, MouseScroll;
     [SerializeField] private GameObject DedicatedDoor, Pers, CameraController;
     public GameObject PickUpObject;
+    public Obi.ObiEmitter PickUpObiEmitter;
+    public Obi.ObiSolver PickUpObiSolver;
     private Animator DedicatedDoorAnimator;
 
     [SerializeField] private Camera MainCamera;
@@ -92,13 +94,16 @@ public class Interaction : MonoBehaviour
     {
         if (PickUpState == true)
         {
+
+            
+
             if (Input.GetMouseButton(1)) // Вращение предмета в руке
             {
                 Pers.GetComponent<CMF.Mover>().enabled = false;
                 Pers.GetComponent<CMF.AdvancedWalkerController>().enabled = false;
                 CameraController.GetComponent<CMF.CameraController>().enabled = false;
 
-                PickUpObjectRigidbody.useGravity = false;
+                PickUpObjectRigidbody.isKinematic = true;
 
                 float rotX = Input.GetAxis("Mouse X") * RotateSpeed * Mathf.Deg2Rad;
                 float rotY = Input.GetAxis("Mouse Y") * RotateSpeed * Mathf.Deg2Rad;
@@ -113,6 +118,8 @@ public class Interaction : MonoBehaviour
                 CameraController.GetComponent<CMF.CameraController>().enabled = true;
 
                 PickUpObjectRigidbody.useGravity = false;
+                PickUpObjectRigidbody.isKinematic = false;
+
                 PickUpObjectRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
                 PickUpObject.transform.position = Vector3.Lerp(PickUpObject.transform.position, LerpPickObject, PickUpLerpSpeed);
 
@@ -211,6 +218,8 @@ public class Interaction : MonoBehaviour
         {
             PickUpObject = InteractRayHit.collider.gameObject;
             PickUpObjectRigidbody = InteractRayHit.collider.gameObject.GetComponent<Rigidbody>();
+            PickUpObiEmitter = PickUpObject.transform.GetChild(2).GetComponent<Obi.ObiEmitter>();
+            PickUpObiSolver = PickUpObject.transform.parent.GetComponent<Obi.ObiSolver>();
             PickUpState = !PickUpState;
         }
         if (Input.GetKeyDown(AdvanceInteractionKey))
