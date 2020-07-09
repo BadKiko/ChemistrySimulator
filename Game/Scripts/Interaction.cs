@@ -33,7 +33,7 @@ public class Interaction : MonoBehaviour
 
     [SerializeField] private FluidRecognition _frScript;
 
-
+    [SerializeField] FluidMark fluidMark_Script;
 
 
     private void Start()
@@ -97,7 +97,7 @@ public class Interaction : MonoBehaviour
         {
             PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false; // Включает коллайдер куда попадает жидкость чтобы пополнить колбу
 
-
+            fluidMark_Script.ShowMark(); // Показывает пометку куда лить
 
             if (Input.GetMouseButton(1)) // Вращение предмета в руке
             {
@@ -107,10 +107,10 @@ public class Interaction : MonoBehaviour
 
                 PickUpObjectRigidbody.isKinematic = true;
 
-                float rotX = Input.GetAxis("Mouse X") * RotateSpeed * Mathf.Deg2Rad;
+                //float rotX = Input.GetAxis("Mouse X") * RotateSpeed * Mathf.Deg2Rad;
                 float rotY = Input.GetAxis("Mouse Y") * RotateSpeed * Mathf.Deg2Rad;
 
-                PickUpObject.transform.RotateAround(Vector3.up, -rotX);
+                //PickUpObject.transform.RotateAround(Vector3.up, -rotX);
                 PickUpObject.transform.RotateAround(Vector3.right, rotY);
             }
             else
@@ -133,11 +133,15 @@ public class Interaction : MonoBehaviour
             }
             else
             {
+                fluidMark_Script.UnshowMark(); // Убирает пометку куда лить
+
                 LerpPickObject = MainCamera.ScreenToWorldPoint(Input.mousePosition) + (MainCamera.transform.TransformDirection(Vector3.forward) / 1.5f + MainCamera.transform.TransformDirection(Vector3.right) / 2f + MainCamera.transform.TransformDirection(Vector3.down) / 3) * 1.5f;
             }
         }
         else
         {
+            fluidMark_Script.UnshowMark(); // Убирает пометку куда лить
+
             PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
             PickUpObjectRigidbody.constraints = RigidbodyConstraints.None;
             PickUpObjectRigidbody.useGravity = true;
@@ -220,6 +224,9 @@ public class Interaction : MonoBehaviour
         if (Input.GetKeyDown(InteractionKey))
         {
             PickUpObject = InteractRayHit.collider.gameObject;
+
+            fluidMark_Script = PickUpObject.transform.parent.GetChild(1).GetComponent<FluidMark>();
+
             PickUpObjectRigidbody = InteractRayHit.collider.gameObject.GetComponent<Rigidbody>();
             PickUpObiEmitter = PickUpObject.transform.GetChild(2).GetComponent<Obi.ObiEmitter>();
             PickUpObiSolver = PickUpObject.transform.parent.GetComponent<Obi.ObiSolver>();

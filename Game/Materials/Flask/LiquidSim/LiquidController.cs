@@ -5,7 +5,7 @@ using UnityEngine;
 public class LiquidController : MonoBehaviour
 {
     private float nowObjectRotate;
-    [Range(0, 180f)] public float RotateMin;
+    [Range(0, 180f)] public float RotateMin, MinimumForShowMark;
     [SerializeField] private Obi.ObiEmitter mainObiEmiter;
     [SerializeField] private Obi.ObiSolver mainObiSolver;
     private Renderer LiquidRenderer;
@@ -13,11 +13,13 @@ public class LiquidController : MonoBehaviour
     [SerializeField] private bool bug90angle;
     [SerializeField] Interaction _interactionScript;
 
+
     private void Start()
     {
         LiquidRenderer = transform.GetChild(1).GetComponent<Renderer>();
         LiquidAmmount = LiquidRenderer.sharedMaterial.GetFloat("_FillAmount");
 
+        _interactionScript = GameObject.Find("FirstPersonWalker_Audio").GetComponent<Interaction>(); // Не самое оптимизированное решение, но выполняется 1 раз для того чтобы референс который не имеет доступа к сцене при появлениии нашел скрипт
     }
 
     private void FixedUpdate()
@@ -31,11 +33,12 @@ public class LiquidController : MonoBehaviour
             
         }
 
-
         if (nowObjectRotate <= RotateMin)
         {
             LiquidAmmount = LiquidRenderer.sharedMaterial.GetFloat("_FillAmount");
             _interactionScript.PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+
+            
 
             if (LiquidAmmount <= 0.68f)
             {
@@ -53,7 +56,6 @@ public class LiquidController : MonoBehaviour
         else
         {
             mainObiEmiter.GetComponent<Obi.ObiEmitter>().speed = 0;
-            _interactionScript.PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
         }
     }
 
