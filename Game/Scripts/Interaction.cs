@@ -95,9 +95,16 @@ public class Interaction : MonoBehaviour
     {
         if (PickUpState == true)
         {
-            PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false; // Включает коллайдер куда попадает жидкость чтобы пополнить колбу
 
-            fluidMark_Script.ShowMark(); // Показывает пометку куда лить
+
+            if (PickUpObject.name == "flask")
+            {
+                PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false; // Включает коллайдер куда попадает жидкость чтобы пополнить колбу
+
+                fluidMark_Script.ShowMark(); // Показывает пометку куда лить
+            }
+
+
 
             if (Input.GetMouseButton(1)) // Вращение предмета в руке
             {
@@ -133,16 +140,21 @@ public class Interaction : MonoBehaviour
             }
             else
             {
-                fluidMark_Script.UnshowMark(); // Убирает пометку куда лить
-
+                if (PickUpObject.name == "flask")
+                {
+                    fluidMark_Script.UnshowMark(); // Убирает пометку куда лить
+                }
                 LerpPickObject = MainCamera.ScreenToWorldPoint(Input.mousePosition) + (MainCamera.transform.TransformDirection(Vector3.forward) / 1.5f + MainCamera.transform.TransformDirection(Vector3.right) / 2f + MainCamera.transform.TransformDirection(Vector3.down) / 3) * 1.5f;
             }
         }
         else
         {
-            fluidMark_Script.UnshowMark(); // Убирает пометку куда лить
+            if (PickUpObject.name == "flask")
+            {
+                fluidMark_Script.UnshowMark(); // Убирает пометку куда лить
 
-            PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+                PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+            }
             PickUpObjectRigidbody.constraints = RigidbodyConstraints.None;
             PickUpObjectRigidbody.useGravity = true;
             //PickUpObjectRigidbody.isKinematic = false;
@@ -223,14 +235,20 @@ public class Interaction : MonoBehaviour
 
         if (Input.GetKeyDown(InteractionKey))
         {
-            PickUpObject = InteractRayHit.collider.gameObject;
+            if (PickUpState == false)
+            {
+                PickUpObject = InteractRayHit.collider.gameObject;
 
-            fluidMark_Script = PickUpObject.transform.parent.GetChild(1).GetComponent<FluidMark>();
+                if (PickUpObject.name == "flask")
+                {
+                    fluidMark_Script = PickUpObject.transform.parent.GetChild(1).GetComponent<FluidMark>();
+                    PickUpObiEmitter = PickUpObject.transform.GetChild(2).GetComponent<Obi.ObiEmitter>();
+                    PickUpObiSolver = PickUpObject.transform.parent.GetComponent<Obi.ObiSolver>();
+                    _frScript.OnEnable();
+                }
 
-            PickUpObjectRigidbody = InteractRayHit.collider.gameObject.GetComponent<Rigidbody>();
-            PickUpObiEmitter = PickUpObject.transform.GetChild(2).GetComponent<Obi.ObiEmitter>();
-            PickUpObiSolver = PickUpObject.transform.parent.GetComponent<Obi.ObiSolver>();
-            _frScript.OnEnable();
+                PickUpObjectRigidbody = InteractRayHit.collider.gameObject.GetComponent<Rigidbody>();
+            }
             PickUpState = !PickUpState;
         }
         if (Input.GetKeyDown(AdvanceInteractionKey))
