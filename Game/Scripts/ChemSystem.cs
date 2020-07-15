@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChemSystem : MonoBehaviour
 {
+    [Header("Таблица Менделеева:")]
     [SerializeField] private string[] ChemElements;
 
     [SerializeField] private int[] ElementsChelochnMetalls;
