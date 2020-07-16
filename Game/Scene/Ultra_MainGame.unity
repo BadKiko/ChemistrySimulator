@@ -1225,6 +1225,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &24892799
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,24 +2153,6 @@ Transform:
   m_Father: {fileID: 417971941}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &51321588 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6708569046605808716, guid: e83f5f2312b27ed49907901903bb29c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 968266802}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &51321593 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 6708569046605808707, guid: e83f5f2312b27ed49907901903bb29c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 968266802}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &51321594 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6708569046605808719, guid: e83f5f2312b27ed49907901903bb29c2,
-    type: 3}
-  m_PrefabInstance: {fileID: 968266802}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &52652007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,6 +2803,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &77607190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3882,6 +3872,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &126739755
 GameObject:
   m_ObjectHideFlags: 0
@@ -13624,6 +13618,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &480632315
 GameObject:
   m_ObjectHideFlags: 0
@@ -13928,6 +13926,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &491388865
 GameObject:
   m_ObjectHideFlags: 0
@@ -15849,6 +15851,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &555005437
 GameObject:
   m_ObjectHideFlags: 0
@@ -16017,6 +16023,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!4 &558728657 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5b83332ec8c8e9f4c92f30b565dae51e,
@@ -19176,6 +19186,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1001 &680279407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20538,6 +20552,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &769100303
 GameObject:
   m_ObjectHideFlags: 0
@@ -25535,7 +25553,7 @@ PrefabInstance:
     - target: {fileID: 6708569048056258362, guid: e83f5f2312b27ed49907901903bb29c2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.8977
+      value: -9.897
       objectReference: {fileID: 0}
     - target: {fileID: 6708569048056258362, guid: e83f5f2312b27ed49907901903bb29c2,
         type: 3}
@@ -26149,8 +26167,7 @@ VFXRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -26379,7 +26396,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 51321594}
+    m_TransformParent: {fileID: 1732693241}
     m_Modifications:
     - target: {fileID: -927199367670048503, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
@@ -26394,17 +26411,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.333
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.222
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
@@ -26429,7 +26446,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
@@ -26449,17 +26466,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.00009052139
+      value: 0.0036975276
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.00014706791
+      value: 0.006007289
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.000060608367
+      value: 0.0073613054
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: fe5f6ca4ee05bf8428ac45b7d7e24494,
         type: 3}
@@ -27911,6 +27928,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &1036423207
 GameObject:
   m_ObjectHideFlags: 0
@@ -28812,6 +28833,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &1078092057
 GameObject:
   m_ObjectHideFlags: 0
@@ -39121,6 +39146,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &1461042800
 GameObject:
   m_ObjectHideFlags: 0
@@ -43682,24 +43711,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
---- !u!114 &1627520786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1627520780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6178e5f0c1ba43f4fb8710de70456a8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stone: {fileID: 1627520780}
-  liquid: {fileID: 51321588}
-  Wobble: 0
-  _liqRender: {fileID: 51321593}
-  Shit: -0.1
-  Shit2: 0
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &1630637593
 GameObject:
   m_ObjectHideFlags: 0
@@ -61008,6 +61023,10 @@ MonoBehaviour:
   ColorWithoutOxygen: {r: 1, g: 1, b: 1, a: 1}
   ColorWithOxygen: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
   OxygenSpeed: 0.001
+  Oxidation: 0
+  CollisionObject: {fileID: 0}
+  BubbleGameObject: {fileID: 272489990531868665, guid: aebc98f30f9eb934fa10592a979e1018,
+    type: 3}
 --- !u!1 &1977726900
 GameObject:
   m_ObjectHideFlags: 0
