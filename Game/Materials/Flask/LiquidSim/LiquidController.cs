@@ -10,13 +10,13 @@ public class LiquidController : MonoBehaviour
     [SerializeField] private Obi.ObiSolver mainObiSolver;
     private Renderer LiquidRenderer;
     [SerializeField] private float LiquidAmmount;
-    [SerializeField] private bool bug90angle;
+    [SerializeField] private int WhatAChildren;
     [SerializeField] Interaction _interactionScript;
 
 
     private void Start()
     {
-        LiquidRenderer = transform.GetChild(1).GetComponent<Renderer>();
+        LiquidRenderer = transform.GetChild(WhatAChildren).GetComponent<Renderer>();
         LiquidAmmount = LiquidRenderer.sharedMaterial.GetFloat("_FillAmount");
 
         _interactionScript = GameObject.Find("FirstPersonWalker_Audio").GetComponent<Interaction>(); // Не самое оптимизированное решение, но выполняется 1 раз для того чтобы референс который не имеет доступа к сцене при появлениии нашел скрипт
@@ -28,15 +28,10 @@ public class LiquidController : MonoBehaviour
 
         nowObjectRotate = transform.eulerAngles.x;
 
-        if (bug90angle)
-        {
-            
-        }
-
         if (nowObjectRotate <= RotateMin)
         {
             LiquidAmmount = LiquidRenderer.sharedMaterial.GetFloat("_FillAmount");
-            _interactionScript.PickUpObject.transform.GetChild(1).GetComponent<BoxCollider>().enabled = false;
+            _interactionScript.PickUpObject.transform.GetChild(WhatAChildren).GetComponent<BoxCollider>().enabled = false;
 
             
 

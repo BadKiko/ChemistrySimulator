@@ -117,8 +117,7 @@ public class Interaction : MonoBehaviour
             }
 
 
-            if (PickUpObject.name == "flask")
-            {
+
                 if (Input.GetMouseButton(1)) // Вращение предмета в руке
                 {
 
@@ -148,14 +147,6 @@ public class Interaction : MonoBehaviour
                     PickUpObjectRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
                     PickUpObject.transform.position = Vector3.Lerp(PickUpObject.transform.position, LerpPickObject, PickUpLerpSpeed);
                 }
-            }
-            else
-            {
-                PickUpObjectRigidbody.useGravity = false;
-                PickUpObjectRigidbody.isKinematic = false;
-                PickUpObjectRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-                PickUpObject.transform.position = Vector3.Lerp(PickUpObject.transform.position, LerpPickObject, PickUpLerpSpeed);
-            }
 
             if (_pickUpMode)
             {
@@ -339,7 +330,7 @@ public class Interaction : MonoBehaviour
         {
             if (KolvoStoneInPincet <= 0)
             {
-                TakeUpObject.transform.GetChild(Random.Range(2, TakeUpObject.transform.childCount)).transform.SetParent(PickUpObject.transform);
+                TakeUpObject.transform.GetChild(Random.Range(3, TakeUpObject.transform.childCount)).transform.SetParent(PickUpObject.transform);
                 KusokMetall = PickUpObject.transform.GetChild(1).gameObject;
 
                 EI_Script = KusokMetall.GetComponent<ElementIndification>();
@@ -359,7 +350,6 @@ public class Interaction : MonoBehaviour
     {
         if (Input.GetKeyDown(TakeInObjectKey))
         {
-            Debug.Log("PHONK");
 
             TakeUpObject = InteractRayHit.collider.gameObject;
 
