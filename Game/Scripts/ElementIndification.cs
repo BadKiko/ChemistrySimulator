@@ -17,7 +17,10 @@ public class ElementIndification : MonoBehaviour
     [Header("Окисление:")]
     [Header("Какой эффект пременить к объекту? :")]
     [SerializeField] private bool Oxidation = false;
-
+    [Header("Горение:")]
+    [SerializeField] private bool Combustion = false;
+    [Header("Взрыв с искрами:")]
+    [SerializeField] private bool ExplosionWithSparks = false;
 
     [Header("Объект с которым сталкивается наш объект:")]
     [SerializeField] private GameObject CollisionObject;
@@ -73,7 +76,28 @@ public class ElementIndification : MonoBehaviour
 
         this.gameObject.transform.localPosition = Vector3.zero; // Ставим локальную позицию по 0
     }
+    private void NatriumInFluid()
+    {
+        Oxidation = true; // Ставим эффект окисления при столкновении с водой
 
+        this.gameObject.transform.localRotation.eulerAngles.Set(0, 0, 0); // Ставим zero чтобы все камни лерпались по одинаковому
+
+        Instantiate(BubbleGameObject, this.gameObject.transform); // Создаеем пузырение а затем ставим на false чтобы не создавать много.
+
+        this.gameObject.AddComponent<StoneInLiquid>(); // Добовляем нашему камню при столкновении скрипт связанный с водой.
+                                                       // Он будет контроллировать высоту камню чтобы камень плавал на поверхности воды.
+
+        this.gameObject.GetComponent<StoneInLiquid>().Stone = this.gameObject; // Даем скрипту наш камень чтобы он менял его положение
+
+        this.gameObject.GetComponent<StoneInLiquid>().LiquidRenderer = CollisionObject.GetComponent<Renderer>(); // Получаем материал чтобы брать FluidAmmount из шеййдера
+
+        this.gameObject.transform.SetParent(CollisionObject.transform); // Ставим родительским объектом у камня жидкость чтобы сбросить координату на 0.
+
+        this.gameObject.GetComponent<BoxCollider>().enabled = false; // Выключаем коллицзию у камня чтобы он мог спокойно быть в колбе и не вылетать из нее
+        Destroy(this.gameObject.GetComponent<Rigidbody>()); // Уничтожаем Rigidbody тк нам не нужна физика чтобы он падал вниз
+
+        this.gameObject.transform.localPosition = Vector3.zero; // Ставим локальную позицию по 0
+    }
     private void Update()
     {
         if (InteractWithOxygen) // Для лерпа нужен update
@@ -91,8 +115,19 @@ public class ElementIndification : MonoBehaviour
             BeginLerp = this.gameObject.transform.localPosition;
             FinishLerp = new Vector3(Random.Range(-0.005f, 0.005f), Random.Range(-0.005f, 0.005f), 0);
 
+            Vector3 BeginLerpSize = this.gameObject.transform.localScale; // Начальный размер камня
+            Vector3 FinishLerpSize = Vector3.zero; // Конечный размер камня он расстворяется в 0
+
+
+            this.gameObject.transform.localScale = Vector3.Lerp(BeginLerpSize, FinishLerpSize, 0.0006f);
 
             this.gameObject.transform.localPosition = Vector3.Lerp(BeginLerp, FinishLerp, 0.03f);
+
+            if(this.gameObject.transform.localScale.x >= 1f)
+            {
+                Debug.Log("MAT CHAST2 - " + this.gameObject.transform.localScale.x);
+                Debug.Log(this.gameObject.name);
+            }
         }
 
     }
@@ -103,7 +138,10 @@ public class ElementIndification : MonoBehaviour
         {
             CollisionObject = collision.collider.gameObject; // Присваеваем объект с которым столкнулся наш камень другому чтобы в дальнейшем это использовать
 
-            LithiumInFluid(); // Запускаем метод когда литий падает в воду
+            if(ElementIs == 2)
+            {
+                LithiumInFluid(); // Запускаем метод когда литий падает в воду
+            }
         }
     }
 }

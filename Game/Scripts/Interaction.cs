@@ -288,6 +288,7 @@ public class Interaction : MonoBehaviour
                 stone = PickUpObject.transform.GetChild(1).gameObject;
 
                 stone.AddComponent<Rigidbody>();
+                stone.AddComponent<BoxCollider>();
 
                 stone.transform.SetParent(null);
 
@@ -330,7 +331,7 @@ public class Interaction : MonoBehaviour
         {
             if (KolvoStoneInPincet <= 0)
             {
-                TakeUpObject.transform.GetChild(Random.Range(3, TakeUpObject.transform.childCount)).transform.SetParent(PickUpObject.transform);
+                TakeUpObject.transform.GetChild(Random.Range(4, TakeUpObject.transform.childCount)).transform.SetParent(PickUpObject.transform);
                 KusokMetall = PickUpObject.transform.GetChild(1).gameObject;
 
                 EI_Script = KusokMetall.GetComponent<ElementIndification>();
