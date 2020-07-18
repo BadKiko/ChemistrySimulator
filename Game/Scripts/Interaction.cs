@@ -354,7 +354,7 @@ public class Interaction : MonoBehaviour
 
             TakeUpObject = InteractRayHit.collider.gameObject;
 
-            if (TakeUpObject.name == "stone")
+            if (TakeUpObject.tag == "MoveOnlyPincet")
             {
                 _takeUpMode = true;
                 Destroy(TakeUpObject.GetComponent<Rigidbody>());
