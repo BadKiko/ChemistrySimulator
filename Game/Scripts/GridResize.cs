@@ -17,8 +17,8 @@ public class GridResize : MonoBehaviour
     {
         var _gridTransform = this.gameObject.GetComponent<RectTransform>(); // Получаем рект трансформ у грида
 
-        //_gridTransform.sizeDelta = new Vector2(_gridTransform.sizeDelta.x, _standartSizeY); // Задаем стандартный размер
-        //_gridTransform.position = new Vector2(_gridTransform.position.x, _standartPosY); // Перетаскиваем на стандартную точку
+        _gridTransform.sizeDelta = new Vector2(_gridTransform.sizeDelta.x, _standartSizeY); // Задаем стандартный размер
+        _gridTransform.localPosition = new Vector2(_gridTransform.localPosition.x, _standartPosY); // Перетаскиваем на стандартную точку
 
         int _childCount = this.gameObject.transform.childCount;
 

@@ -43,6 +43,7 @@ public class Interaction : MonoBehaviour
 
     [SerializeField] private ElementIndification EI_Script; // Скрипт который смотрит за каждым элементом
     [SerializeField] private GridResize _gridResize; // скрипт ресайз грида
+    [SerializeField] private TipsOnObject _objectTips;
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -87,7 +88,8 @@ public class Interaction : MonoBehaviour
                 if (InteractRayHit.collider.tag == "CanMove" && InteractRayHit.distance <= 4f) // Тэг колб и то что можно перетащить
                 {
                     ObjectInteracrion();
-                    _gridResize.Resize();
+                    _objectTips = InteractRayHit.collider.gameObject.GetComponent<TipsOnObject>();
+                    _objectTips.TipsMassive();
                 }
 
                 if (InteractRayHit.collider.tag == "Kran" && InteractRayHit.distance <= 5f) // Тэг крана от куда берется вода

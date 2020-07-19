@@ -32816,6 +32816,7 @@ MonoBehaviour:
   fluidMark_Script: {fileID: 0}
   EI_Script: {fileID: 0}
   _gridResize: {fileID: 1755351520}
+  _objectTips: {fileID: 0}
 --- !u!114 &1215274384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43108,6 +43109,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590354509}
   m_Mesh: {fileID: -5885091460419426104, guid: 2f2bac2bf480dd6469c604292c181c7e, type: 3}
+--- !u!1 &1594860816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7922176715787443944, guid: 5ae2b6fbb463ee54ea856ec33c559551,
+    type: 3}
+  m_PrefabInstance: {fileID: 8782224170425275563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1594860817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1594860816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6b20f8b0888aa45aa780ccc15eabcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tips:
+  - "[E] \u0412\u0437\u044F\u0442\u044C"
+  - "[F] \u041E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u0440\u044B\u0448\u043A\u0443"
+  - "[R] \u0412\u0437\u044F\u0442\u044C \u043B\u0438\u0442\u0438\u0439 (\u041F\u0438\u043D\u0446\u0435\u0442)"
+  _tipObject: {fileID: 3849395165458004460, guid: 0685de9e439db2c429390e4c5d31bd8d,
+    type: 3}
+  _mainGrid: {fileID: 1755351518}
+  _childInGrid: 0
+  _gridResizeScript: {fileID: 1755351520}
 --- !u!1 &1595801504
 GameObject:
   m_ObjectHideFlags: 0
@@ -47065,6 +47093,7 @@ MonoBehaviour:
   fluidMark_Script: {fileID: 0}
   EI_Script: {fileID: 0}
   _gridResize: {fileID: 0}
+  _objectTips: {fileID: 0}
 --- !u!114 &1737086742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47528,7 +47557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resizeScale: 50
   _standartSizeY: 0
-  _standartPosY: 22.62
+  _standartPosY: 10
 --- !u!114 &1755351521
 MonoBehaviour:
   m_ObjectHideFlags: 0
