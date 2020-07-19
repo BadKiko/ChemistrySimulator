@@ -42,7 +42,7 @@ public class Interaction : MonoBehaviour
     private GameObject KusokMetall; // кусок металла который будет в пинцете
 
     [SerializeField] private ElementIndification EI_Script; // Скрипт который смотрит за каждым элементом
-
+    [SerializeField] private GridResize _gridResize; // скрипт ресайз грида
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -87,6 +87,7 @@ public class Interaction : MonoBehaviour
                 if (InteractRayHit.collider.tag == "CanMove" && InteractRayHit.distance <= 4f) // Тэг колб и то что можно перетащить
                 {
                     ObjectInteracrion();
+                    _gridResize.Resize();
                 }
 
                 if (InteractRayHit.collider.tag == "Kran" && InteractRayHit.distance <= 5f) // Тэг крана от куда берется вода
