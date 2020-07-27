@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Interaction : MonoBehaviour
@@ -44,6 +45,9 @@ public class Interaction : MonoBehaviour
     [SerializeField] private ElementIndification EI_Script; // Скрипт который смотрит за каждым элементом
     [SerializeField] private GridResize _gridResize; // скрипт ресайз грида
     [SerializeField] private TipsOnObject _objectTips;
+
+    [SerializeField] private GameObject _LineOfTip;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -83,25 +87,45 @@ public class Interaction : MonoBehaviour
                 if (InteractRayHit.collider.tag == "Door" && InteractRayHit.distance <= 2f) // Тэг дверей
                 {
                     DoorInteractions();
-                }
+                    _LineOfTip.GetComponent<Animator>().SetBool("ShowOrHide", true);
 
-                if (InteractRayHit.collider.tag == "CanMove" && InteractRayHit.distance <= 4f) // Тэг колб и то что можно перетащить
-                {
-                    ObjectInteracrion();
                     _objectTips = InteractRayHit.collider.gameObject.GetComponent<TipsOnObject>();
                     _objectTips.TipsMassive();
                 }
 
-                if (InteractRayHit.collider.tag == "Kran" && InteractRayHit.distance <= 5f) // Тэг крана от куда берется вода
+                else if (InteractRayHit.collider.tag == "CanMove" && InteractRayHit.distance <= 4f) // Тэг колб и то что можно перетащить
                 {
-                    KranInteraction();
+                    ObjectInteracrion();
+                    _LineOfTip.GetComponent<Animator>().SetBool("ShowOrHide", true);
+
+                    _objectTips = InteractRayHit.collider.gameObject.GetComponent<TipsOnObject>();
+                    _objectTips.TipsMassive();
                 }
 
-                if (InteractRayHit.collider.tag == "MoveOnlyPincet" && InteractRayHit.distance <= 8f) // Тэг крана от куда берется вода
+                else if(InteractRayHit.collider.tag == "Kran" && InteractRayHit.distance <= 5f) // Тэг крана от куда берется вода
+                {
+                    KranInteraction();
+                    _LineOfTip.GetComponent<Animator>().SetBool("ShowOrHide", true);
+
+                    _objectTips = InteractRayHit.collider.gameObject.GetComponent<TipsOnObject>();
+                    _objectTips.TipsMassive();
+                }
+
+                else if(InteractRayHit.collider.tag == "MoveOnlyPincet" && InteractRayHit.distance <= 8f) // Тэг крана от куда берется вода
                 {
                     TakeUpStone();
+                    _LineOfTip.GetComponent<Animator>().SetBool("ShowOrHide", true);
+
+                    _objectTips = InteractRayHit.collider.gameObject.GetComponent<TipsOnObject>();
+                    _objectTips.TipsMassive();
+                }
+
+                else
+                {
+                    _LineOfTip.GetComponent<Animator>().SetBool("ShowOrHide", false);
                 }
             }
+
         }
         Debug.DrawLine(StartRay, FinishRay, Color.green);
     }
@@ -110,6 +134,9 @@ public class Interaction : MonoBehaviour
     {
         if (PickUpState == true)
         {
+            _LineOfTip.SetActive(false);
+
+
             PickUpObject.transform.position = Vector3.Lerp(PickUpObject.transform.position, LerpPickObject, PickUpLerpSpeed);
 
             if (PickUpObject.name == "flask")
@@ -120,8 +147,7 @@ public class Interaction : MonoBehaviour
             }
 
 
-
-                if (Input.GetMouseButton(1)) // Вращение предмета в руке
+            if (Input.GetMouseButton(1)) // Вращение предмета в руке
                 {
 
                     Pers.GetComponent<CMF.Mover>().enabled = false;
@@ -166,6 +192,8 @@ public class Interaction : MonoBehaviour
         }
         else
         {
+            _LineOfTip.SetActive(true);
+
             if (PickUpObject.name == "flask")
             {
                 fluidMark_Script.UnshowMark(); // Убирает пометку куда лить
@@ -257,6 +285,9 @@ public class Interaction : MonoBehaviour
 
     public void ObjectInteracrion()
     {
+
+
+
         if (Input.GetKeyDown(InteractionKey))
         {
             PickUpObject = InteractRayHit.collider.gameObject;
@@ -287,6 +318,7 @@ public class Interaction : MonoBehaviour
             }
             if (TakeUpObject.name == "pincet")
             {
+
                 GameObject stone;
                 stone = PickUpObject.transform.GetChild(1).gameObject;
 

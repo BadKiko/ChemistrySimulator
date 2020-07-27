@@ -22,6 +22,8 @@ public class GridResize : MonoBehaviour
 
         int _childCount = this.gameObject.transform.childCount;
 
+        _childCount /= 2;
+
         Debug.Log(_childCount);
 
         for(int i = 0; i < _childCount; i++) // если i меньше или равно количеству детей в гриде то мы останавливаем цикл
@@ -30,4 +32,17 @@ public class GridResize : MonoBehaviour
             _gridTransform.position = new Vector2(_gridTransform.position.x, _gridTransform.position.y + _resizeScale / 2); // Перетаскиваем вверх и
         }
     }
+
+    public void Clear()
+    {
+        int _childCount = this.gameObject.transform.childCount;
+
+        for (int i = 0; i < _childCount; i++)
+        {
+            Destroy(this.gameObject.transform.GetChild(i).gameObject);
+
+            Debug.Log("Desroy - " + this.gameObject.transform.GetChild(i).gameObject.name);
+        }
+    }
+
 }
