@@ -25821,6 +25821,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ebefff5283c17d64dbb52296010e45ae, type: 2}
+    - target: {fileID: 6708569047608498126, guid: e83f5f2312b27ed49907901903bb29c2,
+        type: 3}
+      propertyPath: _needAngle
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83f5f2312b27ed49907901903bb29c2, type: 3}
 --- !u!114 &968266803 stripped
@@ -32897,32 +32902,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e056df05864504dbac5b149c8b801a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ELMColor: {fileID: 1215274378}
-  PickUpObjectRigidbody: {fileID: 0}
-  PickUpLerpSpeed: 0.15
-  MouseScroll: 2
-  DedicatedDoor: {fileID: 0}
-  Pers: {fileID: 1215274374}
-  CameraController: {fileID: 1215274377}
-  PickUpObject: {fileID: 0}
-  TakeUpObject: {fileID: 0}
-  PickUpObiEmitter: {fileID: 0}
-  PickUpObiSolver: {fileID: 0}
-  MainCamera: {fileID: 1215274376}
-  LerpPickObject: {x: 0, y: 0, z: 0}
-  InteractionKey: 101
-  AdvanceInteractionKey: 102
-  TakeInObjectKey: 114
-  DoorState: 0
-  PickUpState: 0
-  AdvAction: 0
-  RotateSpeed: 5
-  _frScript: {fileID: 1215274387}
-  fluidMark_Script: {fileID: 0}
-  EI_Script: {fileID: 0}
-  _gridResize: {fileID: 1755351520}
-  _objectTips: {fileID: 0}
-  _LineOfTip: {fileID: 820095278}
+  _mainCamera: {fileID: 1215274376}
+  _tagList:
+  - Door
 --- !u!114 &1215274384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38525,7 +38507,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8ceaec921fc783a49bc6081c4be1391b,
         type: 3}
       propertyPath: m_TagString
-      value: CanMove
+      value: Knife
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8ceaec921fc783a49bc6081c4be1391b,
         type: 3}
@@ -47194,32 +47176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e056df05864504dbac5b149c8b801a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ELMColor: {fileID: 0}
-  PickUpObjectRigidbody: {fileID: 0}
-  PickUpLerpSpeed: 0.15
-  MouseScroll: 2
-  DedicatedDoor: {fileID: 0}
-  Pers: {fileID: 1737086740}
-  CameraController: {fileID: 0}
-  PickUpObject: {fileID: 0}
-  TakeUpObject: {fileID: 0}
-  PickUpObiEmitter: {fileID: 0}
-  PickUpObiSolver: {fileID: 0}
-  MainCamera: {fileID: 0}
-  LerpPickObject: {x: 0, y: 0, z: 0}
-  InteractionKey: 101
-  AdvanceInteractionKey: 102
-  TakeInObjectKey: 114
-  DoorState: 0
-  PickUpState: 0
-  AdvAction: 0
-  RotateSpeed: 5
-  _frScript: {fileID: 0}
-  fluidMark_Script: {fileID: 0}
-  EI_Script: {fileID: 0}
-  _gridResize: {fileID: 0}
-  _objectTips: {fileID: 0}
-  _LineOfTip: {fileID: 0}
+  _mainCamera: {fileID: 0}
+  _tagList: []
 --- !u!114 &1737086742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48682,6 +48640,86 @@ Transform:
   m_Father: {fileID: 1136751962}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1803442833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1803442835}
+  - component: {fileID: 1803442834}
+  m_Layer: 0
+  m_Name: Square
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &1803442834
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803442833}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e457e30fe5121ae4f996dc2c450678ce, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7058824}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1803442835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803442833}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -10.0924, y: 0.896, z: -0.4502}
+  m_LocalScale: {x: 0.26435927, y: 0.0073959534, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1805159870
 GameObject:
   m_ObjectHideFlags: 0
@@ -62529,10 +62567,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84541a65f5e1e459ef3c818084f171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowObjectRotate: 0
   RotateMin: 100
   MinimumForShowMark: 0
   mainObiEmiter: {fileID: 0}
   mainObiSolver: {fileID: 0}
+  LiquidRenderer: {fileID: 0}
   LiquidAmmount: 0
   WhatAChildren: 0
   _interactionScript: {fileID: 0}
