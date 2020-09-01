@@ -22,6 +22,7 @@ public class MenuInteractions : MonoBehaviour
                 if (InteractRayHit.collider.tag == "NewGameBtn" && Input.GetMouseButtonDown(0))
                 {
                 Application.LoadLevel(1);
+                Camera.main.GetComponent<Animator>().SetBool("ShowSlot", true);
                 }
         }
 

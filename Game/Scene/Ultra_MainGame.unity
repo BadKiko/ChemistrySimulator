@@ -28675,8 +28675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ba828b970119b4aacd87696a524b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionScript: {fileID: 1215274383}
-  liquidContr: {fileID: 0}
 --- !u!1 &1059717880
 GameObject:
   m_ObjectHideFlags: 0
@@ -32731,6 +32729,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 114453171939595980, guid: 5d075d3ed32dfe1498e31454964d07e8,
+        type: 3}
+      propertyPath: audioClipVolume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d075d3ed32dfe1498e31454964d07e8, type: 3}
 --- !u!1 &1215274374 stripped
@@ -32902,9 +32905,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e056df05864504dbac5b149c8b801a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionKey: 101
   _mainCamera: {fileID: 1215274376}
   _tagList:
   - Door
+  - CanMove
+  _lerpSpeed: 0.25
 --- !u!114 &1215274384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32956,12 +32962,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39ccbb95904d02344ac8028c52a17f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  solver: {fileID: 0}
-  emitter: {fileID: 0}
-  mainCollider: {fileID: 1588879836}
-  _interactionScript: {fileID: 1215274383}
-  _liquidControllerScript: {fileID: 0}
-  _liquidPlusAmmount: 0.000223
 --- !u!1 &1220209870
 GameObject:
   m_ObjectHideFlags: 0
@@ -47176,8 +47176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76e056df05864504dbac5b149c8b801a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionKey: 0
   _mainCamera: {fileID: 0}
   _tagList: []
+  _lerpSpeed: 0
 --- !u!114 &1737086742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62553,8 +62555,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ba828b970119b4aacd87696a524b10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionScript: {fileID: 1737086741}
-  liquidContr: {fileID: 0}
 --- !u!114 &2022626146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62567,15 +62567,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84541a65f5e1e459ef3c818084f171, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowObjectRotate: 0
-  RotateMin: 100
-  MinimumForShowMark: 0
-  mainObiEmiter: {fileID: 0}
-  mainObiSolver: {fileID: 0}
-  LiquidRenderer: {fileID: 0}
-  LiquidAmmount: 0
-  WhatAChildren: 0
-  _interactionScript: {fileID: 0}
 --- !u!65 &2022626147
 BoxCollider:
   m_ObjectHideFlags: 0
