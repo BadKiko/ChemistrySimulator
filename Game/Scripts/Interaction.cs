@@ -1,17 +1,25 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using MyBox; // Атрибут для того чтобы скрывать другие атрибуты при bool
 using System;
 
+
 namespace ChemistrySimulator
 {
-
     public class Interaction : MonoBehaviour
     {
         // Основное
+        [Header("Кнопки: ")]
+
         public KeyCode interactionKey = KeyCode.E; // Основная кнопка взаимодействия
         private GameObject _rayHitGameObject; // Объект в который попадает наш луч
         [Header("Камера игрока:")]
         [SerializeField] private Camera _mainCamera; // Главная камера которая стоит на игроке
+
+        [Header("Основные параметры:")]
+
+        [SerializeField] private GameObject _player;
+        [SerializeField] private GameObject _cameraController;
 
         // Лучи
         private Vector3 _beginRay; // Начало луча
@@ -28,7 +36,14 @@ namespace ChemistrySimulator
         // PickUpObject
         private bool _pickUpped; // Бул то что объект поднят
         [SerializeField] [Range(0f, 10f)] float _lerpSpeed; // Скорость лерпа для поднимаемого объекта
-        
+
+        // LaptopInteraction
+        [Header("Параметры ноутбука:")]
+
+        public bool isLaptopOpened = false; // Открыт ли сейчас ноутбук?
+        [SerializeField] private Vector3 _laptopCameraPosition;
+        [SerializeField] private Vector3 _laptopCameraRotate;
+        [SerializeField] private Transform _defaultCameraPosition;
 
         private void Start()
         {
@@ -124,6 +139,9 @@ namespace ChemistrySimulator
                 case 1:
                     PickUpInteraction();
                     break;
+                case 2:
+                    LaptopInteraction();
+                    break;
 
                 default:
                     Debug.LogError("Can't find a interaction!");
@@ -151,6 +169,27 @@ namespace ChemistrySimulator
 
             PickUpLerpObject(_rayHitGameObject);
         }
+
+        // Laptop
+        private void LaptopInteraction() // Взаимодействие с Laptop
+        {
+            Debug.Log("Open Laptop");
+
+            isLaptopOpened = true;
+
+            FreezePlayerWithCamera(false); // Фризим игрока и камеру
+
+            StartCoroutine(LaptopInteractionLerp(_laptopCameraPosition, _laptopCameraRotate));
+        }
+
+        private void FreezePlayerWithCamera(bool isEnable)
+        {
+            _player.GetComponent<CMF.Mover>().enabled = isEnable; // Отключаем или включаем скрипт движения на игроке
+            _player.GetComponent<CMF.AdvancedWalkerController>().enabled = isEnable;
+            _cameraController.GetComponent<CMF.CameraController>().enabled = isEnable; // Отключаем или включаем скрипт управления камерой
+        }
+
+        //////////////////
         private void PickUpLerpObject(GameObject gameObject) // Функция лерпа объекта к центру экрана
         {
             Vector3 _beginLerp = gameObject.transform.position; // Начальная точка это точка объекта в который попал луч
@@ -171,5 +210,29 @@ namespace ChemistrySimulator
             rotateGameObject.transform.eulerAngles = Vector3.Lerp(rotateGameObject.transform.eulerAngles, endRotateVector, speedRotate);
         }
 
+        // Coroutines
+
+        public IEnumerator LaptopInteractionLerp(Vector3 endPos, Vector3 endRot)
+        {
+            while (_mainCamera.transform.position != endPos && _mainCamera.transform.eulerAngles != endRot) // Пока позиция камеры не будет как указанная цикл будет работать
+            {
+                _mainCamera.transform.position = Vector3.Lerp(_mainCamera.transform.position, endPos, 0.1f); // Лерп позиции камеры
+                _mainCamera.transform.eulerAngles = Vector3.Lerp(_mainCamera.transform.eulerAngles, endRot, 0.1f); // Лерп вращения камеры
+
+                yield return new WaitForFixedUpdate();
+            }
+        }
+
+        public void CloseLaptop() // Вызывается в скрипте Pause
+        {
+            //StartCoroutine(LaptopInteractionLerp(Vector3.zero, Vector3.zero));
+            StopAllCoroutines();
+            _mainCamera.transform.localPosition = _defaultCameraPosition.localPosition;
+            _mainCamera.transform.localRotation = _defaultCameraPosition.localRotation;
+
+            isLaptopOpened = false;
+            Debug.Log($"Vector3 Zero - {Vector3.zero}, DefaultCameraPos - {_defaultCameraPosition.position}, DefaultCameraPosLocal - {_defaultCameraPosition.localPosition}, NowCameraPos - {_mainCamera.transform.position}, NowCameraPosLocal - {_mainCamera.transform.localPosition}");
+        }
     }
+
 }

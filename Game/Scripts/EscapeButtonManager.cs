@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Pause : MonoBehaviour
+public class EscapeButtonManager : MonoBehaviour
 {
     private bool _escPress = false;
     [SerializeField] private GameObject VFX_Smoke; 
     [SerializeField] private GameObject Pers, CameraController;
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] private Button Exit, InMenu;
-
+    [SerializeField] private ChemistrySimulator.Interaction interaction;
 
     private void Start()
     {
@@ -18,12 +18,13 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(interaction.isLaptopOpened + "sss");
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             _escPress = !_escPress;
 
             Debug.Log(_escPress);
-            if (_escPress == true)
+            if (_escPress == true && interaction.isLaptopOpened == false)
             {
                 VFX_Smoke.SetActive(true);
                 VFX_Smoke.GetComponent<UnityEngine.Experimental.VFX.VisualEffect>().playRate = 0.25f;
@@ -38,7 +39,7 @@ public class Pause : MonoBehaviour
                 PauseMenu.SetActive(true);
                 PauseMenu.GetComponent<Animator>().SetBool("Show", true);
             }
-            if (_escPress == false)
+            if (_escPress == false && interaction.isLaptopOpened == false)
             {
                 VFX_Smoke.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
@@ -50,6 +51,10 @@ public class Pause : MonoBehaviour
 
                 PauseMenu.SetActive(false);
                 PauseMenu.GetComponent<Animator>().SetBool("Show", false);
+            }
+            if (interaction.isLaptopOpened) // Если ноутбук открыт, то мы делаем не паузу а вызываем действие закрытия
+            {
+                interaction.CloseLaptop();
             }
         }
     }
